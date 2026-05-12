@@ -53,8 +53,17 @@ class _FormProductViewState extends State<FormProductView> {
     return Scaffold(
       backgroundColor: const Color(0xFFFDF5E6),
       appBar: AppBar(
-        title: const Text('TAMBAH COOKIES'),
+        title: const Text(
+          'TAMBAH COOKIES',
+          style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.2, color: Colors.white),
+        ),
         backgroundColor: const Color(0xFF5D4037),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white), 
+          onPressed: () {
+            Navigator.pop(context); 
+          },
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),

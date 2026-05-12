@@ -67,8 +67,17 @@ class _SubmitTaskViewState extends State<SubmitTaskView> {
     return Scaffold(
       backgroundColor: const Color(0xFFFDF5E6),
       appBar: AppBar(
-        title: const Text('FINAL SUBMISSION'),
+        title: const Text(
+          'SUBMIT FINAL',
+          style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.2, color: Colors.white),
+        ),
         backgroundColor: const Color(0xFF5D4037),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white), 
+          onPressed: () {
+            Navigator.pop(context); 
+          },
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
@@ -76,27 +85,23 @@ class _SubmitTaskViewState extends State<SubmitTaskView> {
           key: _formKey,
           child: Column(
             children: [
-              const Text(
-                'Pastikan data produk dan link GitHub sudah benar sebelum melakukan submit final.',
-                style: TextStyle(fontStyle: FontStyle.italic),
-              ),
               const SizedBox(height: 24),
               TextFormField(
                 controller: _nameController,
-                decoration: const InputDecoration(labelText: 'Nama Produk Final'),
+                decoration: const InputDecoration(labelText: 'Nama Produk'),
                 validator: (value) => value!.isEmpty ? 'Nama wajib diisi' : null,
               ),
               const SizedBox(height: 16),
               TextFormField(
                 controller: _priceController,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(labelText: 'Harga Final'),
+                decoration: const InputDecoration(labelText: 'Harga'),
                 validator: (value) => value!.isEmpty ? 'Harga wajib diisi' : null,
               ),
               const SizedBox(height: 16),
               TextFormField(
                 controller: _descController,
-                decoration: const InputDecoration(labelText: 'Deskripsi Final'),
+                decoration: const InputDecoration(labelText: 'Deskripsi'),
                 validator: (value) => value!.isEmpty ? 'Deskripsi wajib diisi' : null,
               ),
               const SizedBox(height: 16),
@@ -104,7 +109,7 @@ class _SubmitTaskViewState extends State<SubmitTaskView> {
                 controller: _githubController,
                 decoration: const InputDecoration(
                   labelText: 'Link Repository GitHub',
-                  hintText: 'https://github.com/fahmi/tugas-pbm',
+                  hintText: 'https://github.com/...',
                   prefixIcon: Icon(Icons.code),
                 ),
                 validator: (value) {
@@ -119,7 +124,7 @@ class _SubmitTaskViewState extends State<SubmitTaskView> {
                 : ElevatedButton(
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.green[700]),
                     onPressed: _prosesSubmitFinal,
-                    child: const Text('SUBMIT TUGAS SEKARANG'),
+                    child: const Text('SUBMIT'),
                   ),
             ],
           ),
