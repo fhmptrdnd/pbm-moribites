@@ -36,12 +36,6 @@ class _CatalogViewState extends State<CatalogView> {
           style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.2, color: Colors.white),
         ),
         backgroundColor: primaryBrown,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white), 
-          onPressed: () {
-            Navigator.pop(context); 
-          },
-        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.cloud_upload),
